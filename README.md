@@ -8,7 +8,7 @@ About r-rknn
 
 Home: https://CRAN.R-project.org/package=rknn
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Random knn classification and regression are implemented. Random knn based feature selection methods are also included. The approaches are mainly developed for high-dimensional data with small sample size.
 About r-rknn
@@ -16,7 +16,7 @@ About r-rknn
 
 Home: https://CRAN.R-project.org/package=rknn
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: Random knn classification and regression are implemented. Random knn based feature selection methods are also included. The approaches are mainly developed for high-dimensional data with small sample size.
 
