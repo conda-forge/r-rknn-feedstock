@@ -13,10 +13,12 @@ source:
     - https://cran.r-project.org/src/contrib/rknn_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/rknn/rknn_{{ version }}.tar.gz
   sha256: 2545b594ad3a8bbae5837cb40fdf97647dc9fc08edb48f397e1c6012460039f5
+  patches:
+    - patches/0001-support-strict-r-headers.patch
 
 build:
   merge_build_host: True  # [win]
-  number: 1004
+  number: 1005
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -24,7 +26,7 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
+    - posix                      # [win]
     - {{ compiler('c') }}        # [unix]
     - {{ compiler('m2w64_c') }}  # [win]
   host:
@@ -41,12 +43,14 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=rknn
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Random knn classification and regression are implemented. Random knn based feature
     selection methods are also included. The approaches are mainly developed for high-dimensional
     data with small sample size.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: 
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
