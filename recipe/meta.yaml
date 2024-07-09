@@ -1,7 +1,6 @@
 {% set version = '1.2-1' %}
 
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rknn
@@ -17,8 +16,7 @@ source:
     - patches/0001-support-strict-r-headers.patch
 
 build:
-  merge_build_host: True  # [win]
-  number: 1005
+  number: 1006
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -26,9 +24,10 @@ build:
 
 requirements:
   build:
-    - posix                      # [win]
     - {{ compiler('c') }}        # [unix]
+    - {{ stdlib("c") }}          # [unix]
     - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
   host:
     - r-base
     - r-gmp >=0.5_5
