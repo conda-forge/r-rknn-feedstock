@@ -14,7 +14,7 @@ source:
     - patches/0001-support-strict-r-headers.patch
 
 build:
-  number: 1006
+  number: 1007
   rpaths:
     - lib/R/lib/
     - lib/
